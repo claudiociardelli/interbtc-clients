@@ -1,3 +1,4 @@
+#![feature(allocator_api)]
 pub mod cli;
 pub mod pallets;
 

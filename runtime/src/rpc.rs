@@ -1,4 +1,4 @@
-use codec::Encode;
+ codec::Encode;
 
 use async_trait::async_trait;
 use core::marker::PhantomData;
@@ -18,9 +18,9 @@ use tokio::{sync::RwLock, time::sleep};
 
 use crate::{
     btc_relay::*, conn::*, exchange_rate_oracle::*, fee::*, issue::*, pallets::*, redeem::*, refund::*, relay::*,
-    replace::*, retry::*, security::*, timestamp::*, tokens::*, types::*, utility::*, vault_registry::*, AccountId,
-    BlockNumber, CurrencyId, Error, InterBtcRuntime, BTC_RELAY_MODULE, RELAY_CHAIN_CURRENCY,
-    STABLE_BITCOIN_CONFIRMATIONS, STABLE_PARACHAIN_CONFIRMATIONS,
+    replace::*, retry::*, security::*, timestamp::*, tokens::*, types::*, utility::*, vault_registry::*, AccountId, 
+    BlockNumber, CurrencyId, Error, InterBtcRuntime, BTC_RELAY_MODULE, STABLE_BITCOIN_CONFIRMATIONS,
+    STABLE_PARACHAIN_CONFIRMATIONS,
 };
 
 const DEFAULT_COLLATERAL_CURRENCY: CurrencyId = CurrencyId::DOT;
@@ -1274,6 +1274,11 @@ pub trait VaultRegistryPallet {
     async fn get_required_collateral_for_vault(&self, vault_id: AccountId) -> Result<u128, Error>;
 
     async fn get_vault_total_collateral(&self, vault_id: AccountId) -> Result<u128, Error>;
+
+    async fn get_premium_redeem_vaults(&self) -> Result<Vec<AccountId>, Error>;
+
+    // async fn get_vaults_with_issuable_tokens(&self) -> Result<Vec<AccountId, BalanceWrapper<u128>>, Error>;
+
 }
 
 #[async_trait]
@@ -1442,6 +1447,35 @@ impl VaultRegistryPallet for InterBtcParachain {
 
         Ok(result.amount)
     }
+
+    /// Fetch all vaults in premium redeem state.
+    async fn get_premium_redeem_vaults(&self) -> Result<Vec<AccountId>, Error> {
+        let head = self.get_latest_block_hash().await?;
+        let call_result: Vec<(AccountId, BalanceWrapper<u128>)> = self
+        .rpc_client
+        .request(
+            "vaultRegistry_getPremiumRedeemVaults",
+            &[to_json_value(head)?],
+        )
+        .await?;
+
+        Ok(call_result.into_iter().map(|(account_id, _)| account_id).collect())
+    }    
+
+    // /// Fetch all vaults with issuable tokens.
+    // async fn get_vaults_with_issuable_tokens(&self) -> Result<Vec<AccountId, BalanceWrapper<u128>>, Error> {
+    //     let head = self.get_latest_block_hash().await?;
+    //     let call_result: Vec<(AccountId, BalanceWrapper<u128>)> = self
+    //     .rpc_client
+    //     .request(
+    //         "vaultRegistry_getVaultsWithIssuableTokens",
+    //         &[to_json_value(head)?],
+    //     )
+    //     .await?;
+
+    //     Ok(call_result)
+    //     // Ok(call_result.into_iter().map(|(account_id, )| account_id).collect())
+    // }
 }
 
 #[async_trait]

@@ -16,6 +16,8 @@ testing-utils = [
 ]
 
 [dependencies]
+tracing = { version = "0.1", features = ["log"] }
+
 serde = { version = "1.0.119", features = ["derive"] }
 codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive", "full"] }
 async-trait = "0.1.40"

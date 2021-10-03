@@ -5,5 +5,8 @@ members = [
   "vault",
   "bitcoin",
   "faucet",
+  "cli/explore",
+  "cli/redeem",
+  "cli/predeem",
   "service"
 ]

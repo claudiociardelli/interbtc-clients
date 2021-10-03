@@ -174,6 +174,8 @@ mod tests {
             async fn get_required_collateral_for_wrapped(&self, amount_btc: u128) -> Result<u128, RuntimeError>;
             async fn get_required_collateral_for_vault(&self, vault_id: AccountId) -> Result<u128, RuntimeError>;
             async fn get_vault_total_collateral(&self, vault_id: AccountId) -> Result<u128, RuntimeError>;
+            async fn get_premium_redeem_vaults(&self) -> Result<Vec<AccountId>, RuntimeError>;
+            // async fn get_vaults_with_issuable_tokens(&self) -> Result<Vec<AccountId, BalanceWrapper<u128>>, RuntimeError>;
         }
 
         #[async_trait]
