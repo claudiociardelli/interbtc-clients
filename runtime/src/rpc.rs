@@ -1,4 +1,4 @@
- codec::Encode;
+use  codec::Encode;
 
 use async_trait::async_trait;
 use core::marker::PhantomData;
@@ -19,8 +19,8 @@ use tokio::{sync::RwLock, time::sleep};
 use crate::{
     btc_relay::*, conn::*, exchange_rate_oracle::*, fee::*, issue::*, pallets::*, redeem::*, refund::*, relay::*,
     replace::*, retry::*, security::*, timestamp::*, tokens::*, types::*, utility::*, vault_registry::*, AccountId, 
-    BlockNumber, CurrencyId, Error, InterBtcRuntime, BTC_RELAY_MODULE, STABLE_BITCOIN_CONFIRMATIONS,
-    STABLE_PARACHAIN_CONFIRMATIONS,
+    BlockNumber, CurrencyId, Error, InterBtcRuntime, BTC_RELAY_MODULE, RELAY_CHAIN_CURRENCY,
+    STABLE_BITCOIN_CONFIRMATIONS, STABLE_PARACHAIN_CONFIRMATIONS,
 };
 
 const DEFAULT_COLLATERAL_CURRENCY: CurrencyId = CurrencyId::DOT;

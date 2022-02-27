@@ -443,6 +443,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "balances"
+version = "0.0.1"
+dependencies = [
+ "clap 3.0.0-beta.2",
+ "env_logger 0.6.2",
+ "git-version",
+ "log 0.4.14",
+ "runtime",
+ "thiserror",
+ "tokio 1.9.0",
+ "tracing",
+]
+
+[[package]]
 name = "base-x"
 version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1769,6 +1783,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e43f2f1833d64e33f15592464d6fdd70f349dda7b1a53088eb83cd94014008c5"
 dependencies = [
  "futures 0.3.16",
+]
+
+[[package]]
+name = "explore"
+version = "0.0.1"
+dependencies = [
+ "clap 3.0.0-beta.2",
+ "env_logger 0.6.2",
+ "git-version",
+ "log 0.4.14",
+ "runtime",
+ "thiserror",
+ "tokio 1.9.0",
+ "tracing",
 ]
 
 [[package]]
@@ -3138,7 +3166,7 @@ dependencies = [
  "pallet-transaction-payment-rpc-runtime-api",
  "pallet-utility",
  "parity-scale-codec",
- "redeem",
+ "redeem 1.0.0",
  "refund",
  "relay",
  "replace",
@@ -6088,6 +6116,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ac74c624d6b2d21f425f752262f42188365d7b8ff1aff74c82e45136510a4857"
 
 [[package]]
+name = "predeem"
+version = "0.0.1"
+dependencies = [
+ "bitcoin 1.0.0",
+ "clap 3.0.0-beta.2",
+ "env_logger 0.6.2",
+ "git-version",
+ "log 0.4.14",
+ "runtime",
+ "thiserror",
+ "tokio 1.9.0",
+ "tracing",
+]
+
+[[package]]
 name = "predicates"
 version = "1.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6620,6 +6663,21 @@ dependencies = [
 
 [[package]]
 name = "redeem"
+version = "0.0.1"
+dependencies = [
+ "bitcoin 1.0.0",
+ "clap 3.0.0-beta.2",
+ "env_logger 0.6.2",
+ "git-version",
+ "log 0.4.14",
+ "runtime",
+ "thiserror",
+ "tokio 1.9.0",
+ "tracing",
+]
+
+[[package]]
+name = "redeem"
 version = "1.0.0"
 source = "git+https://github.com/interlay/interbtc?rev=9051d0d2f0c4584c1c9c70f21edcab1881655cb4#9051d0d2f0c4584c1c9c70f21edcab1881655cb4"
 dependencies = [
@@ -6784,7 +6842,7 @@ dependencies = [
  "orml-tokens",
  "orml-traits",
  "parity-scale-codec",
- "redeem",
+ "redeem 1.0.0",
  "refund",
  "replace",
  "security",
@@ -6985,6 +7043,7 @@ dependencies = [
  "tempdir",
  "thiserror",
  "tokio 1.9.0",
+ "tracing",
  "url 2.2.2",
  "vault-registry",
  "xcm 0.9.7",

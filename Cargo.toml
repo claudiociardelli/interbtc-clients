@@ -8,5 +8,6 @@ members = [
   "cli/explore",
   "cli/redeem",
   "cli/predeem",
+  "cli/balances",
   "service"
 ]
