@@ -8,4 +8,7 @@ members = [
   "service",
 #my-cli
   "cli/explore",
+  "cli/redeem",
+  "cli/issue_request",
+  "cli/issue_pay",
 ]

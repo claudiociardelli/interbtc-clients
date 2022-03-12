@@ -1,0 +1,25 @@
+# Redeem Client
+
+Redeem command line tool.
+
+## Responsibilities
+
+## Getting Started
+
+Run the interBTC redeem client:
+
+```
+cargo run
+```
+
+### Options
+
+When using cargo to run this binary, arguments to cargo and the binary are separated by `--`. For example, to pass `--help` to the faucet to get a list of all command line options that is guaranteed to be up date, run:
+
+```
+cargo run -- --help
+```
+
+For convenience, a copy of this output is included below.
+```
+```
