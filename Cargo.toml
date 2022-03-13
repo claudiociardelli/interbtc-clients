@@ -6,8 +6,8 @@ members = [
   "bitcoin",
   "faucet",
   "service",
-  # "cli/explore",
+  "cli/explore",
   "cli/redeem",
-  # "cli/issue_request",
-  # "cli/issue_pay"
+  "cli/issue_request",
+  "cli/issue_pay"
 ]

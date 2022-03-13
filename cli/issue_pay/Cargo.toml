@@ -9,7 +9,7 @@ description = "command line interBTC issue btc payment tool."
 log = "0.4.6"
 env_logger = "0.6.1"
 tracing = { version = "0.1", features = ["log"] }
-clap = "3.0.0-beta.2"
+clap = "3.1"
 #chrono = "0.4.19"
 tokio = { version = "1.0", features = ["full"] }
 thiserror = "1.0"
@@ -25,8 +25,8 @@ git-version = "0.3.4"
 
 # Workspace dependencies
 runtime = { path = "../../runtime" }
-bitcoin = "0.27.1"
-# bitcoin = { path = "../../bitcoin" }
+bitcoin = { path = "../../bitcoin" }
+real-bitcoin = { version = "0.27.1", package = "bitcoin" }
 bdk = "0.16.0"
 # service = { path = "../service" }
 
@@ -34,7 +34,7 @@ bdk = "0.16.0"
 
 # Workspace dependencies
 runtime = { path = "../../runtime", features = ["testing-utils"] }
-# bitcoin = { path = "../../bitcoin", features = ["cli"] }
-bitcoin = { version = "0.27.1"}
+bitcoin = { path = "../../bitcoin", features = ["cli"] }
+real-bitcoin = { version = "0.27.1", package = "bitcoin" }
 # Substrate dependencies
 #sp-keyring = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.8" }

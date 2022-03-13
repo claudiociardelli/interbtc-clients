@@ -1,6 +1,6 @@
 mod error;
 
-use clap::Clap;
+use clap::Parser;
 use git_version::git_version;
 
 //Tool code
@@ -26,7 +26,7 @@ const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 const NAME: &str = env!("CARGO_PKG_NAME");
 const ABOUT: &str = env!("CARGO_PKG_DESCRIPTION");
 
-#[derive(Clap)]
+#[derive(Parser)]
 #[clap(name = NAME, version = VERSION, author = AUTHORS, about = ABOUT)]
 struct Opts {
     /// Simulation mode. Transaction not sent.
@@ -47,14 +47,14 @@ struct Opts {
     config: ToolConfig,
 }
 
-#[derive(Clap, Clone)]
+#[derive(Parser, Clone)]
 pub struct ToolConfig {
     /// Amount to issue, in satoshis
     #[clap(long, default_value = "30400")]
     amount: u128,
 
     /// Amount for griefing prevention, in satoshis
-    #[clap(long, default_value = "10000")]
+    #[clap(long, default_value = "500000000")]
     griefing: u128,
 
     /// Vault to issue from - account
