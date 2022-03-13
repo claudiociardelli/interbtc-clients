@@ -2874,7 +2874,7 @@ dependencies = [
  "pallet-treasury",
  "pallet-utility",
  "parity-scale-codec",
- "redeem",
+ "redeem 1.2.0",
  "refund",
  "relay",
  "replace",
@@ -6190,6 +6190,21 @@ dependencies = [
 
 [[package]]
 name = "redeem"
+version = "0.0.1"
+dependencies = [
+ "bitcoin 1.1.0",
+ "clap",
+ "env_logger 0.6.2",
+ "git-version",
+ "log 0.4.14",
+ "runtime",
+ "thiserror",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "redeem"
 version = "1.2.0"
 source = "git+https://github.com/interlay/interbtc?rev=22b7490625b34de6b04f5750eda5966083d98567#22b7490625b34de6b04f5750eda5966083d98567"
 dependencies = [
@@ -6352,7 +6367,7 @@ dependencies = [
  "orml-tokens",
  "orml-traits",
  "parity-scale-codec",
- "redeem",
+ "redeem 1.2.0",
  "refund",
  "replace",
  "scale-info",
